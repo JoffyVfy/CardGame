@@ -1,0 +1,24 @@
+flowchart TB
+    JSON["level_1.json<br>(JSON配置文件)"] -- 读取 JSON --> Loader["LevelConfigLoader<br>配置加载器"]
+    Loader -- LevelConfig --> Generator["GameGeneratorService<br>游戏生成服务"]
+    Generator -- 生成 GameModel --> Controller["GameController<br>(协调者/中心)"]
+    Controller -- 初始化视图<br>传递数据 --> Scene["GameScene<br>(View 渲染)"]
+    Scene -. 用户点击事件<br>(回调) .-> Controller
+    Controller -- 调用数据操作 --> Manager["GameManager<br>(数据操作/业务逻辑)"]
+    Manager -- 修改/查询 --> Model["GameModel<br>━━━━━━━━━━━━<br>• reserveCards[]<br>• stackCards[]<br>• playfieldCards[]"]
+
+    JSON:::jsonStyle
+    Loader:::configStyle
+    Generator:::serviceStyle
+    Controller:::controllerStyle
+    Scene:::viewStyle
+    Manager:::managerStyle
+    Model:::modelStyle
+
+    classDef jsonStyle fill:#ffe0b2,stroke:#e65100,stroke-width:3px,color:#000
+    classDef configStyle fill:#f3e5f5,stroke:#4a148c,stroke-width:3px,color:#000
+    classDef serviceStyle fill:#e8f5e9,stroke:#1b5e20,stroke-width:3px,color:#000
+    classDef controllerStyle fill:#fff9c4,stroke:#f57f17,stroke-width:3px,color:#000
+    classDef viewStyle fill:#e1f5ff,stroke:#01579b,stroke-width:3px,color:#000
+    classDef managerStyle fill:#fce4ec,stroke:#880e4f,stroke-width:3px,color:#000
+    classDef modelStyle fill:#e0f2f1,stroke:#004d40,stroke-width:3px,color:#000

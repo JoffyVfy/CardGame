@@ -1,0 +1,10 @@
+^C:\USERS\JOFFY VFY\DOCUMENTS\COCOSPROGRAM\TEST3\PROJ.WIN32\CMAKEFILES\CF763153FEDD93D8B675061892701B52\GENERATE.STAMP.RULE
+setlocal
+C:\Joffy\Cmake\bin\cmake.exe "-SC:/Users/Joffy Vfy/Documents/CocosProgram/test3" "-BC:/Users/Joffy Vfy/Documents/CocosProgram/test3/proj.win32" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/Joffy Vfy/Documents/CocosProgram/test3/proj.win32/test3.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

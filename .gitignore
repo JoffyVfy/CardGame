@@ -1,0 +1,79 @@
+# Compiled Object files
+*.o
+*.obj
+
+# Compiled Dynamic libraries
+*.dll
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lib
+*.a
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Build directories
+proj.win32/bin/
+proj.win32/lib/
+proj.win32/Debug/
+proj.win32/Release/
+proj.win32/CMakeFiles/
+proj.win32/*.dir/
+proj.win32/CMakeCache.txt
+proj.win32/cmake_install.cmake
+proj.win32/*.vcxproj
+proj.win32/*.vcxproj.*
+proj.win32/*.sln
+proj.win32/engine/
+
+# macOS
+proj.ios_mac/build/
+*.xcworkspace
+xcuserdata/
+*.xcuserstate
+
+# Android
+proj.android/.gradle/
+proj.android/build/
+proj.android/app/build/
+proj.android/local.properties
+*.apk
+*.ap_
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.pdb
+*.ilk
+*.idb
+ipch/
+
+# VS Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# cocos2d-x
+cocos2d/
+
+# Python
+*.pyc
+__pycache__/
+
+# Logs
+*.log

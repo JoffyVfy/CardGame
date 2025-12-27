@@ -6,24 +6,11 @@
 
 ## 📸 游戏截图
 
-```
-┌─────────────────────────────┐
-│       主牌区 (Playfield)     │
-│    ┌───┐  ┌───┐  ┌───┐      │
-│    │ 3 │  │ 2 │  │ 2 │      │
-│    │ ♥ │  │ ♥ │  │ ♥ │      │
-│    └───┘  └───┘  └───┘      │
-│                             │
-├─────────────────────────────┤
-│       手牌区 (Stack)         │
-│  ┌───┐              [回退]  │
-│  │ A │                      │
-│  │ ♠ │                      │
-│  └───┘                      │
-│       备用牌区 (Reserve)     │
-└─────────────────────────────┘
+![截图1](images/游戏截图1.png)
 
-```
+![截图2](images/游戏截图2.png)
+
+
 
 ---
 
@@ -80,51 +67,8 @@ Classes/
 
 ### 架构图
 
-```mermaid
-flowchart TB
-    subgraph APPLICATION["APPLICATION"]
-        AppDelegate["AppDelegate"]
-    end
-    
-    subgraph CONTROLLER["CONTROLLER LAYER"]
-        GameController["GameController (单例)<br/>协调 Model 与 View"]
-    end
-    
-    subgraph MANAGER["MANAGER LAYER"]
-        GameManager["GameManager<br/>纯数据操作"]
-    end
-    
-    subgraph SERVICE["SERVICE LAYER"]
-        GameGeneratorService["GameGeneratorService<br/>生成游戏模型"]
-    end
-    
-    subgraph CONFIG["CONFIG LAYER"]
-        LevelConfigLoader["LevelConfigLoader"]
-        LevelConfig["LevelConfig"]
-    end
-    
-    subgraph MODEL["MODEL LAYER"]
-        GameModel["GameModel"]
-        CardModel["CardModel"]
-    end
-    
-    subgraph VIEW["VIEW LAYER"]
-        GameScene["GameScene"]
-        CardView["CardView"]
-    end
-    
-    APPLICATION --> CONTROLLER
-    CONTROLLER --> MANAGER
-    CONTROLLER --> SERVICE
-    CONTROLLER --> CONFIG
-    MANAGER --> MODEL
-    SERVICE --> MODEL
-    SERVICE --> CONFIG
-    MODEL --> VIEW
-    GameModel --> CardModel
-    GameScene --> CardView
-    LevelConfigLoader --> LevelConfig
-```
+![架构图](models/Architecture_diagram.png)
+
 
 ---
 
@@ -145,6 +89,8 @@ flowchart TB
 ---
 
 ## 🔄 核心流程
+
+![核心流程图](models/Flowchart.png)
 
 ### 游戏初始化流程
 
